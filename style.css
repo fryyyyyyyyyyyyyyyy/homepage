@@ -1791,6 +1791,19 @@ a:focus-visible {
     background: #00cc00;
 }
 
+/* 浅色模式下的终端滚动条 */
+[data-theme="light"] .terminal-body::-webkit-scrollbar-track {
+    background: #e8e8e8;
+}
+
+[data-theme="light"] .terminal-body::-webkit-scrollbar-thumb {
+    background: #0066cc;
+}
+
+[data-theme="light"] .terminal-body::-webkit-scrollbar-thumb:hover {
+    background: #0052a3;
+}
+
 /* 页脚 - 液态玻璃 */
 .footer {
     text-align: center;
