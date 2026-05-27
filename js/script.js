@@ -694,7 +694,7 @@ function initTravelMap() {
         // 使用图片作为标记
         const markerContent = `
             <div class="amap-marker-pin-style">
-                <img src="location.png" class="pin-image" alt="location pin">
+                <img src="assets/images/location.png" class="pin-image" alt="location pin">
             </div>
         `;
 
