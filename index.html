@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#intro" class="logo">
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- 三座山峰 -->
+                    <path d="M2 28 L10 12 L16 20 L10 28 Z" fill="currentColor" opacity="0.5"/>
+                    <path d="M8 28 L16 8 L24 20 L16 28 Z" fill="currentColor" opacity="0.9"/>
+                    <path d="M16 28 L24 14 L30 22 L24 28 Z" fill="currentColor" opacity="0.5"/>
+                    <!-- 山峰轮廓线 -->
+                    <path d="M2 28 L10 12 L16 20 L24 14 L30 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <!-- 地平线 -->
+                    <line x1="0" y1="28" x2="32" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="logo-text">NEVER STOP EXPLORING</span>
+            </a>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="#intro" class="nav-link">关于我 <span class="nav-en">About Me</span></a></li>
+                    <li><a href="#data" class="nav-link">可视化 <span class="nav-en">Visualization</span></a></li>
+                    <li><a href="#easter" class="nav-link">彩蛋 <span class="nav-en">Easter Egg</span></a></li>
+                    <li><a href="about-site.html" class="nav-link">关于本站 <span class="nav-en">About Site</span></a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                    <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 神经网络式呼吸光点背景 -->
+    <div class="neural-lights" id="neuralLights"></div>
+
+    <!-- 主容器 -->
+    <main class="container">
+
+        <!-- 第一板块：自我介绍 -->
+        <section id="intro" class="section intro-section">
+            <div class="section-header">
+                <h2 class="section-title">个人简介</h2>
+                <p class="section-subtitle">关于我的故事</p>
+            </div>
+            <div class="section-content">
+                <div class="intro-header-layout">
+                    <img src="portrait.png" alt="符睿洋的照片" class="profile-image-inline">
+                    <div class="intro-title-wrapper">
+                        <h1 class="intro-title">
+                            <span class="title-line">你好，我是 / Hello, I'm</span>
+                            <span class="title-name">符睿洋</span>
+                            <span class="title-name-en">Frey</span>
+                        </h1>
+                        <p class="intro-subtitle">
+                            上海交通大学 · 自动化与感知学院 · 智能感知工程<br>
+                            SJTU · SAIS · Intelligent Perception Engineering
+                        </p>
+                    </div>
+                </div>
+
+                    <div class="intro-description">
+                        <div class="intro-block">
+                            <h3 class="intro-block-title">💻 学习与技术方向 / Learning & Technical Focus</h3>
+                            <p class="text-cn"><strong>算法与代码实现：</strong>习惯使用 Python 攻克复杂的算法设计问题，注重底层逻辑与代码效率。</p>
+                            <p class="text-en"><strong>Algorithm & Implementation:</strong> Proficient in Python for tackling complex algorithm design, focusing on underlying logic and code efficiency.</p>
+
+                            <p class="text-cn"><strong>机器学习与基础理论：</strong>对神经网络架构（如 Transformers、CNN）的数学基础抱有浓厚兴趣，喜欢深入探究模型组件背后的数学推导与权重初始化原理。</p>
+                            <p class="text-en"><strong>Machine Learning & Theory:</strong> Deep interest in the mathematical foundations of neural network architectures (Transformers, CNNs), exploring mathematical derivations and weight initialization principles.</p>
+
+                            <p class="text-cn"><strong>计算机视觉：</strong>具有目标检测和语义分割的实践经验，熟悉主流视觉模型的训练与部署流程，关注视觉算法在实际场景中的应用与优化。</p>
+                            <p class="text-en"><strong>Computer Vision:</strong> Experienced in object detection and semantic segmentation tasks, familiar with training and deployment of mainstream vision models, focusing on practical applications and optimization of visual algorithms.</p>
+                        </div>
+
+                        <div class="intro-block">
+                            <h3 class="intro-block-title">🛠️ 项目与实践经验 / Projects & Experience</h3>
+                            <p class="text-cn"><strong>硬件与自动化控制：</strong>开发了基于 Arduino Mega、RPLidar 和麦克纳姆轮底盘的自动避障小车，独立完成雷达数据处理、PID 转向修正及核心控制逻辑的 C++ 编写。</p>
+                            <p class="text-en"><strong>Hardware & Automation:</strong> Developed an autonomous obstacle-avoidance vehicle using Arduino Mega, RPLidar, and Mecanum wheels, independently implementing radar data processing, PID steering correction, and core control logic in C++.</p>
+
+                            <p class="text-cn"><strong>数学建模竞赛：</strong>作为团队主力"建模手"参与 2026 年美国大学生数学建模竞赛（MCM/ICM），针对电池耗竭预测和河流污染物泄漏模拟等问题构建了完整的数学模型，运用 LaTeX 撰写严谨的论文。</p>
+                            <p class="text-en"><strong>Mathematical Modeling Competition:</strong> Participated in the 2026 MCM/ICM as the team's primary modeler, constructing complete mathematical models for battery depletion prediction and river pollutant leakage simulation, with rigorous papers written in LaTeX.</p>
+
+                            <p class="text-cn"><strong>系统部署与 AI 集成：</strong>熟练管理各类 AI 与云服务平台接口，曾成功配置并部署集成多种 API 的 Node.js 本地智能体网关系统（OpenClaw）。</p>
+                            <p class="text-en"><strong>System Deployment & AI Integration:</strong> Experienced in managing AI and cloud service platform APIs, successfully configured and deployed a Node.js local agent gateway system (OpenClaw) integrating multiple APIs.</p>
+                        </div>
+
+                        <div class="intro-block">
+                            <h3 class="intro-block-title">⚙️ 爱好与生活 / Hobbies & Life</h3>
+                            <p class="text-cn"><strong>旅行与徒步：</strong>热衷于探索自然风光与城市文化，享受徒步过程中身心的放松与对周遭环境的细致观察。从山间小径到城市街巷，每一次行走都是对世界的重新认识。</p>
+                            <p class="text-en"><strong>Travel & Hiking:</strong> Passionate about exploring natural landscapes and urban cultures, enjoying the physical and mental relaxation during hiking while observing surroundings in detail. From mountain trails to city streets, every journey is a rediscovery of the world.</p>
+
+                            <p class="text-cn"><strong>PC 组装与硬件调优：</strong>享受亲自挑选配件并从头组装电脑的乐趣，对 AMD Ryzen 和 Intel Core Ultra 9 等不同平台的硬件配置、PCIe 通道分配及 BIOS 调优有丰富的实战经验。</p>
+                            <p class="text-en"><strong>PC Building & Hardware:</strong> Passionate about selecting components and building PCs from scratch, with extensive hands-on experience in hardware configuration, PCIe lane allocation, and BIOS tuning across AMD Ryzen and Intel Core Ultra 9 platforms.</p>
+
+                            <p class="text-cn"><strong>"科学"烹饪：</strong>喜欢用工科思维对待美食。例如在制作传统手工拉面时，会认真研究面团在 20°C 下的醒发机制，以及鸡蛋的加入对面粉物理性质产生的具体影响。</p>
+                            <p class="text-en"><strong>"Scientific" Cooking:</strong> Applying engineering mindset to culinary arts, such as studying dough fermentation mechanisms at 20°C and the physical effects of egg addition on flour properties when making traditional hand-pulled noodles.</p>
+                        </div>
+                    </div>
+
+                    <div class="education-section">
+                        <h3 class="education-title">🎓 教育经历 / Education</h3>
+                        <div class="education-item">
+                            <div class="education-header">
+                                <h4><a href="https://www.sjtu.edu.cn/" target="_blank" class="school-link">上海交通大学 / Shanghai Jiao Tong University</a></h4>
+                                <span class="education-year">2024 - 至今 / Present</span>
+                            </div>
+                            <p class="education-detail">本科在读 · 大二 / Undergraduate · Sophomore</p>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-header">
+                                <h4><a href="http://www.scz.czedu.cn/" target="_blank" class="school-link">江苏省常州高级中学 / Changzhou Senior High School of Jiangsu Province</a></h4>
+                                <span class="education-year">2021 - 2024</span>
+                            </div>
+                            <p class="education-detail">高中 / High School</p>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-header">
+                                <h4><a href="http://www.ztsy.xbjyfw.cn/" target="_blank" class="school-link">常州市中天实验学校 / Changzhou Zhongtian Experimental School</a></h4>
+                                <span class="education-year">2018 - 2021</span>
+                            </div>
+                            <p class="education-detail">初中 / Middle School</p>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-header">
+                                <h4><a href="http://dysx.dyedu.net.cn/" target="_blank" class="school-link">丹阳市实验小学 / Danyang Experimental Primary School</a></h4>
+                                <span class="education-year">2012 - 2018</span>
+                            </div>
+                            <p class="education-detail">小学 / Primary School</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/fryyyyyyyyyyyyyyyy" target="_blank" class="social-link">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                        <div class="social-dropdown">
+                            <button class="social-link dropdown-toggle">
+                                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                                Email
+                                <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="mailto:furuiyang17@gmail.com" class="dropdown-item">
+                                    <span class="email-label">Gmail</span>
+                                    <span class="email-address">furuiyang17@gmail.com</span>
+                                </a>
+                                <a href="mailto:2766448920@qq.com" class="dropdown-item">
+                                    <span class="email-label">QQ邮箱</span>
+                                    <span class="email-address">2766448920@qq.com</span>
+                                </a>
+                                <a href="mailto:freyinsjtu@sjtu.edu.cn" class="dropdown-item">
+                                    <span class="email-label">SJTU邮箱</span>
+                                    <span class="email-address">freyinsjtu@sjtu.edu.cn</span>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="https://instagram.com/ruirui748748" target="_blank" class="social-link">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二板块：个人数据可视化 -->
+        <section id="data" class="section">
+            <div class="section-header">
+                <h2 class="section-title">数据概览</h2>
+                <p class="section-subtitle">用数字讲述故事</p>
+            </div>
+
+            <!-- 睡眠数据可视化 -->
+            <div class="sleep-container">
+                    <h3 class="sleep-title">💤 睡眠数据分析</h3>
+
+                    <div class="sleep-stats-grid">
+                        <div class="sleep-stat-card">
+                            <div class="sleep-stat-label">总记录天数</div>
+                            <div class="sleep-stat-value"><span id="sleepTotalDays">-</span><span class="sleep-stat-unit">days</span></div>
+                        </div>
+                        <div class="sleep-stat-card">
+                            <div class="sleep-stat-label">平均睡眠时长</div>
+                            <div class="sleep-stat-value"><span id="sleepAvgHours">-</span><span class="sleep-stat-unit">h</span></div>
+                        </div>
+                        <div class="sleep-stat-card sleep-range-card">
+                            <div class="sleep-stat-label">数据范围</div>
+                            <div class="sleep-dropdown">
+                                <button class="sleep-dropdown-toggle">
+                                    <span class="sleep-range-text" id="sleepRangeText">最近 90 天</span>
+                                    <svg class="sleep-dropdown-arrow" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M7 10l5 5 5-5z"/>
+                                    </svg>
+                                </button>
+                                <div class="sleep-dropdown-menu">
+                                    <button class="sleep-dropdown-item" data-range="30">
+                                        <span class="sleep-range-label">最近 30 天</span>
+                                        <span class="sleep-range-date" id="range-30">-</span>
+                                    </button>
+                                    <button class="sleep-dropdown-item active" data-range="90">
+                                        <span class="sleep-range-label">最近 90 天</span>
+                                        <span class="sleep-range-date" id="range-90">-</span>
+                                    </button>
+                                    <button class="sleep-dropdown-item" data-range="180">
+                                        <span class="sleep-range-label">最近 180 天</span>
+                                        <span class="sleep-range-date" id="range-180">-</span>
+                                    </button>
+                                    <button class="sleep-dropdown-item" data-range="365">
+                                        <span class="sleep-range-label">最近一年</span>
+                                        <span class="sleep-range-date" id="range-365">-</span>
+                                    </button>
+                                    <button class="sleep-dropdown-item" data-range="all">
+                                        <span class="sleep-range-label">全部数据</span>
+                                        <span class="sleep-range-date" id="range-all">-</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sleep-chart-container">
+                        <h4 class="sleep-chart-title">睡眠时长趋势</h4>
+                        <div class="sleep-chart-wrapper">
+                            <canvas id="sleepDurationChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="sleep-chart-container">
+                        <h4 class="sleep-chart-title">睡眠阶段分布</h4>
+                        <div class="sleep-chart-wrapper">
+                            <canvas id="sleepStagesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 跑步数据可视化 -->
+                <div class="running-container">
+                    <h3 class="running-title">🏃 跑步轨迹矩阵</h3>
+
+                    <div class="running-stats-grid">
+                        <div class="running-stat-card">
+                            <div class="running-stat-label">总跑步次数</div>
+                            <div class="running-stat-value"><span id="runningTotalRuns">-</span><span class="running-stat-unit">runs</span></div>
+                        </div>
+                        <div class="running-stat-card">
+                            <div class="running-stat-label">总里程</div>
+                            <div class="running-stat-value"><span id="runningTotalDistance">-</span><span class="running-stat-unit">km</span></div>
+                        </div>
+                        <div class="running-stat-card">
+                            <div class="running-stat-label">平均配速</div>
+                            <div class="running-stat-value"><span id="runningAvgPace">-</span><span class="running-stat-unit">min/km</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 轨迹矩阵 -->
+                    <div class="track-matrix" id="trackMatrix">
+                        <!-- 轨迹将通过 JS 动态生成 -->
+                    </div>
+                </div>
+
+                <!-- 旅行地图 -->
+                <div class="map-container">
+                    <h3 class="map-title">🗺️ 我的足迹地图</h3>
+                    <div id="travelMap" class="travel-map"></div>
+                </div>
+        </section>
+
+        <!-- 第三板块：交互小彩蛋 -->
+        <section id="easter" class="section easter-section">
+            <div class="section-header">
+                <h2 class="section-title">探索彩蛋</h2>
+                <p class="section-subtitle">终端模拟器</p>
+            </div>
+
+            <!-- 终端模拟器 -->
+            <div class="terminal-wrapper">
+                <canvas class="matrix-effect hidden" id="matrixCanvas"></canvas>
+
+                <div class="terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-button close"></div>
+                        <div class="terminal-button minimize"></div>
+                        <div class="terminal-button maximize"></div>
+                        <div class="terminal-title">terminal@homepage</div>
+                    </div>
+                    <div class="terminal-body" id="terminalBody">
+                        <div class="terminal-output" id="output">
+                            <div class="ascii-art">
+ _    _
+| |  | |
+| |__| | ___  _ __ ___   ___ _ __   __ _  __ _  ___
+|  __  |/ _ \| '_ ` _ \ / _ \ '_ \ / _` |/ _` |/ _ \
+| |  | | (_) | | | | | |  __/ |_) | (_| | (_| |  __/
+|_|  |_|\___/|_| |_| |_|\___| .__/ \__,_|\__, |\___|
+                            | |           __/ |
+                            |_|          |___/
+                            </div>
+                            <div class="terminal-line success">欢迎来到我的主页！</div>
+                            <div class="terminal-line info">输入 'help' 查看可用命令</div>
+                        </div>
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">
+                                <span class="terminal-user">visitor</span>@<span class="terminal-path">homepage</span>:~$
+                            </span>
+                            <input type="text" class="terminal-input" id="terminalInput" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>&copy; 2026 FreyinSJTU. Made with ❤️</p>
+    </footer>
+
+    <!-- 跑步轨迹悬停提示框 -->
+    <div class="track-tooltip" id="trackTooltip">
+        <div class="tooltip-date"></div>
+        <div class="tooltip-distance"></div>
+        <div class="tooltip-duration"></div>
+        <div class="tooltip-pace"></div>
+    </div>
+
+    <!-- 高德地图 JS API -->
+    <script src="https://webapi.amap.com/maps?v=2.0&key=6ec17fd011b4ee5cd57cac5b30d3e92b"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- 睡眠数据 -->
+    <script src="sleep_data.js"></script>
+    <!-- 跑步数据 -->
+    <script src="running_data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

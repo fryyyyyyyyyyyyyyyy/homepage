@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>终端模拟器 - 彩蛋</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .terminal-container {
+            width: 100%;
+            max-width: 900px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 255, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: #2d2d2d;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-button.close { background: #ff5f56; }
+        .terminal-button.minimize { background: #ffbd2e; }
+        .terminal-button.maximize { background: #27c93f; }
+
+        .terminal-title {
+            color: #999;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .terminal-body {
+            padding: 20px;
+            height: 500px;
+            overflow-y: auto;
+            background: #0a0a0a;
+        }
+
+        .terminal-output {
+            color: #00ff00;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .terminal-line {
+            margin-bottom: 8px;
+        }
+
+        .terminal-prompt {
+            color: #00ff00;
+        }
+
+        .terminal-user {
+            color: #00d9ff;
+        }
+
+        .terminal-path {
+            color: #ffaa00;
+        }
+
+        .terminal-command {
+            color: #ffffff;
+        }
+
+        .terminal-input-line {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .terminal-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            outline: none;
+            margin-left: 5px;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: #00ff00;
+            animation: blink 1s infinite;
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .error {
+            color: #ff5555;
+        }
+
+        .success {
+            color: #50fa7b;
+        }
+
+        .info {
+            color: #8be9fd;
+        }
+
+        .warning {
+            color: #ffb86c;
+        }
+
+        .ascii-art {
+            color: #bd93f9;
+            font-size: 10px;
+            line-height: 1.2;
+        }
+
+        .matrix-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* 滚动条样式 */
+        .terminal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .terminal-body::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        .terminal-body::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border-radius: 4px;
+        }
+
+        .terminal-body::-webkit-scrollbar-thumb:hover {
+            background: #00cc00;
+        }
+    </style>
+</head>
+<body>
+    <canvas class="matrix-effect hidden" id="matrixCanvas"></canvas>
+
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-button close"></div>
+            <div class="terminal-button minimize"></div>
+            <div class="terminal-button maximize"></div>
+            <div class="terminal-title">terminal@homepage</div>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+            <div class="terminal-output" id="output">
+                <div class="ascii-art">
+ _    _
+| |  | |
+| |__| | ___  _ __ ___   ___ _ __   __ _  __ _  ___
+|  __  |/ _ \| '_ ` _ \ / _ \ '_ \ / _` |/ _` |/ _ \
+| |  | | (_) | | | | | |  __/ |_) | (_| | (_| |  __/
+|_|  |_|\___/|_| |_| |_|\___| .__/ \__,_|\__, |\___|
+                            | |            __/ |
+                            |_|           |___/
+                </div>
+                <div class="success">欢迎来到我的终端！</div>
+                <div class="info">输入 'help' 查看可用命令</div>
+                <div style="margin-top: 10px;"></div>
+            </div>
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">
+                    <span class="terminal-user">visitor</span>@<span class="terminal-path">homepage</span>:~$
+                </span>
+                <input type="text" class="terminal-input" id="terminalInput" autofocus autocomplete="off">
+                <span class="cursor"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="terminal.js"></script>
+</body>
+</html>

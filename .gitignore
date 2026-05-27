@@ -1,0 +1,22 @@
+# Apple Health 原始导出文件（太大且不需要）
+apple_health_export/
+
+# Python 脚本（只用于本地数据处理）
+parse_running_data.py
+parse_sleep_data.py
+
+# 原始 JSON 数据文件（已转换为 JS）
+running_data.json
+sleep_data.json
+
+# Claude Code 配置文件
+.claude/
+
+# 测试文件
+test_terminal.html
+sleep.html
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.log
