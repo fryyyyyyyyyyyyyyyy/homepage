@@ -9,8 +9,9 @@ parse_sleep_data.py
 running_data.json
 sleep_data.json
 
-# Claude Code 配置文件
+# Claude Code 配置文件和项目文档
 .claude/
+CLAUDE.md
 
 # 测试文件
 test_terminal.html
