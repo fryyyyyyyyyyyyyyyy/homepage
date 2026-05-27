@@ -857,6 +857,12 @@ a:focus-visible {
     overflow: hidden;
 }
 
+[data-theme="light"] .dropdown-menu {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
 .social-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -872,6 +878,10 @@ a:focus-visible {
     text-decoration: none;
     transition: all 0.2s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="light"] .dropdown-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .dropdown-item:last-child {
